@@ -7,6 +7,7 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.termguicolors = true
+vim.opt.winborder = "rounded"
 
 vim.opt.colorcolumn = "80"
 

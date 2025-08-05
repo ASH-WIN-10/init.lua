@@ -1,4 +1,11 @@
 return {
+    -- autopairs
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {},
+    },
+
     -- copilot
     {
         "github/copilot.vim",
@@ -9,6 +16,14 @@ return {
                 replace_keycodes = false,
             })
             vim.g.copilot_no_tab_map = true
+        end,
+    },
+
+    -- undotree
+    {
+        "mbbill/undotree",
+        config = function()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end,
     },
 

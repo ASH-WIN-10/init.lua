@@ -3,18 +3,18 @@ require("config.opts")
 
 -- autocmd
 local augroup = vim.api.nvim_create_augroup
-local AshGroup = augroup("Ash", {})
+local group = augroup("grp", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("BufWritePre", {
-    group = AshGroup,
+    group = group,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
 autocmd("LspAttach", {
-    group = AshGroup,
+    group = group,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("i", "<C-q>", function()
